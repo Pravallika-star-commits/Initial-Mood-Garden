@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mood Garden — Single Page App</title>
+  <meta name="description" content="Mood Garden — click to plant seeds, change weather, and grow your tiny interactive garden." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app" class="container" role="main">
+    <header class="header">
+      <h1 class="title">Mood Garden</h1>
+      <p class="subtitle">Click the canvas to plant seeds. Change weather & colors to match your mood 🌱</p>
+    </header>
+
+    <section class="controls" aria-label="controls">
+      <div class="control-row">
+        <label for="plantStyle">Plant style</label>
+        <select id="plantStyle" aria-label="Plant style">
+          <option value="sprout">Sprout</option>
+          <option value="bloom">Bloom</option>
+          <option value="fantasy">Fantasy</option>
+        </select>
+
+        <label for="sizeRange">Size</label>
+        <input id="sizeRange" type="range" min="0.5" max="1.6" step="0.05" value="1" />
+
+        <button id="clearBtn" class="btn">Clear</button>
+      </div>
+
+      <div class="control-row">
+        <label for="weather">Weather</label>
+        <select id="weather" aria-label="Weather">
+          <option value="clear">Clear</option>
+          <option value="rain">Rain</option>
+          <option value="night">Night</option>
+        </select>
+
+        <label for="palette">Palette</label>
+        <input id="palette" type="color" value="#3cb371" aria-label="Palette color" />
+
+        <button id="exportBtn" class="btn">Export PNG</button>
+      </div>
+    </section>
+
+    <section class="garden-wrap" aria-label="garden area">
+      <div id="garden" class="garden" tabindex="0" role="region" aria-label="Interactive garden">
+        <!-- plants will be appended here -->
+      </div>
+
+      <aside class="legend" aria-hidden="false">
+        <h2>Tips</h2>
+        <ul>
+          <li>Click anywhere in the garden to plant a seed.</li>
+          <li>Use controls to change style, size, and weather.</li>
+          <li>Export a PNG snapshot of your garden.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <small>Made with 🌿 — single-page app demo</small>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
